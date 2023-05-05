@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { Fragment } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { publicRouter } from './routers';
+import DefaultLayout from './Layout/DefaultLayout';
 
 function App() {
+  const isLogin = localStorage.getItem('token')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Routes>
+          {
+              publicRouter.map((route, index) => {
+                let Layout = DefaultLayout
+                if (route.layout === null) Layout = Fragment
+                else if (route.layout) {
+                  Layout = route.layout
+                }
+                const Page = route.component
+                return <Route key={index} path={route.path} element={<Layout><Page /></Layout>} />
+              }) 
+          }
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+

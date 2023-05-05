@@ -1,0 +1,81 @@
+.detail-title {
+    padding-top: 70px;
+    color: orangered;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.bill-detail-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 2rem 0 0.5rem 0;
+    color: var(--blue);
+}
+
+
+.detail-info span,
+.detail-status span {
+    font-weight: 500;
+    padding-right: 1rem;
+    font-style: normal !important;
+}
+
+.detail-info>p,
+.detail-status>p {
+    font-style: italic;
+}
+
+.detail-status>p:nth-child(1) {
+    display: flex;
+}
+
+.detail-status-name {
+    padding: 0.2rem 1rem;
+    background-color: greenyellow;
+    color: black
+}
+
+.hanldeStatus>button {
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: 500;
+    margin: 1rem 1rem;
+}
+
+.hanldeStatus>button:nth-child(1) {
+    background-color: var(--blue);
+}
+
+.hanldeStatus>button:nth-child(2) {
+    background-color: red;
+}
+
+.cancle-status {
+    background: red !important;
+    color: white !important;
+}
+
+.shipping-status {
+    background-color: var(--blue) !important;
+    color: white !important;
+}
+
+.bill-detail-product {
+    margin: 2rem 0 1rem 0;
+}
+
+.success-order {
+    background-color: var(--success);
+    color: white;
+}
+
+.navigate-detail-bill>span:nth-child(1) {
+    font-weight: 500;
+    color: green;
+}
+
+.navigate-detail-bill>span:nth-child(3) {
+    font-style: italic;
+    text-decoration: underline;
+    opacity: 0.8;
+}

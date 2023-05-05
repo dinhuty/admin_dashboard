@@ -1,0 +1,20 @@
+.header-lohout {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: end;
+}
+
+.header-lohout>div {
+    justify-self: end !important;
+    justify-items: end;
+    padding: 1rem;
+    color: white;
+    /* background-color: ; */
+    font-weight: 500;
+}
+.header-lohout>div span{
+    margin-right: 0.5rem;
+    font-weight: 500;
+}

@@ -1,0 +1,43 @@
+.sidebar-top {
+    height: 100px;
+    width: 100%;
+    margin: auto;
+}
+.sidebar-top{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    font-weight: 500;
+    color: orangered;
+}
+.sidebar-top>p{
+    text-shadow: 0 0.3rem 0.5rem #c4b59d;
+}
+
+.sidebar-menu-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 10px;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    opacity: 0.5;
+    transition: all ease-in-out 200ms;
+}
+
+.sidebar-menu-item>i {
+    line-height: 100%;
+    padding: 5px 10px;
+}
+.sidebar-menu-item:hover{
+    opacity: 1;
+}
+.sidebar-menu-item>p {
+    line-height: 100%;
+}
+
+.active_nav {
+    background-color: rgb(35, 106, 238);
+    opacity: 1;
+}

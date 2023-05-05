@@ -1,0 +1,236 @@
+.product {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+/* Add product */
+.add-product-frm {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 500px;
+    margin-top: 2rem;
+}
+
+.add-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-product>p {
+    margin-top: 7rem;
+    font-size: 3rem;
+    font-weight: 600;
+    color: orangered;
+}
+
+.add-product-input-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.add-product-input-text>input {
+    padding: 0.5rem 1rem;
+}
+
+.add-product-input-text>textarea {
+    padding: 1rem 1rem;
+    height: 150px;
+}
+
+.add-product-input-file {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.add-product-frm span {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.error-add {
+    font-size: 1.2rem;
+    margin-top: 2rem !important;
+    color: red !important;
+}
+
+.add-product-input-submit>input {
+    padding: 0.7rem 2rem;
+    border: none;
+    margin: 1rem;
+    background-color: blueviolet;
+    font-weight: 600;
+    color: white;
+}
+
+.add-product-input-submit>input:hover {
+    opacity: 0.8;
+}
+
+.add-product-input-submit {
+    display: flex;
+}
+
+/* detail product */
+.main-detail-product {
+    display: flex;
+    justify-content: center;
+}
+
+.detail-product-header {
+    margin-top: 7rem;
+    margin-left: 20px;
+    font-size: 3rem;
+    font-weight: 600;
+    color: orangered;
+}
+
+.detail-product {
+    padding: 2rem;
+}
+
+.navigate-detail-product {
+    margin-left: 2rem;
+    font-weight: 500;
+}
+
+.navigate-detail-product>span:nth-child(1) {
+    padding: 0 0.3rem;
+    color: green;
+    font-style: italic;
+}
+
+.navigate-detail-product>span:nth-child(2) {
+    padding: 0 0.3rem;
+}
+
+.detail-product-item {
+    display: flex;
+}
+
+.detail-product-item p {}
+
+.detail-product-item span {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.detail-product-item img {
+    height: 300px;
+    width: auto;
+}
+
+.product-detail-size {
+    display: flex;
+
+}
+
+.product-detail-size>p:nth-child(1) {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.detail-product>button {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    background-color: blueviolet;
+    transition: background-color ease-in-out 300ms;
+    color: white;
+    font-weight: 500;
+}
+
+.detail-product>button:hover {
+    background-color: violet;
+}
+
+.productdetail {
+    height: 100vh;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+td,
+th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+    table {
+        width: 100%;
+    }
+
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        /* Label the data */
+        content: attr(data-column);
+
+        color: #000;
+        font-weight: bold;
+    }
+
+}

@@ -1,0 +1,55 @@
+.user {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    /* background-color: red; */
+}
+
+.user-add {
+    padding: 50px 30px 30px 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.user-add>div {
+    font-size: 1.2rem;
+    color: white;
+    background-color:#3498db;
+    padding: 0.5rem 1rem;
+}
+
+/* new */
+.user-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: fit-content;
+    padding: 2rem;
+    text-align: center
+}
+
+table {
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* .user-table tr:hover {background-color: #ddd;} */
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3498db;
+    color: white;
+}
+
+.edit-btn {
+    color: blue;
+    font-style: italic;
+    text-decoration: underline;
+}

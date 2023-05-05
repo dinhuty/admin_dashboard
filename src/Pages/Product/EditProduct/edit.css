@@ -1,0 +1,22 @@
+.navigate-edit-product {
+    align-self: start;
+    padding-left: 5rem;
+
+}
+
+.navigate-edit-product {
+    margin-left: 2rem;
+    font-weight: 500;
+}
+
+.navigate-edit-product>span:nth-child(1) {
+    padding: 0 0.3rem;
+    color: green;
+    font-style: italic;
+}
+
+.navigate-edit-product>span:nth-child(3) {
+    padding: 0 0.3rem;
+    color: green;
+    font-style: italic;
+}
