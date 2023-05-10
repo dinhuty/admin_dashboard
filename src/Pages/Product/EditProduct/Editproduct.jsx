@@ -5,6 +5,7 @@ import { BiChevronRight } from "react-icons/bi";
 import '../products.css'
 import './edit.css'
 const Editproduct = () => {
+    const token = localStorage.getItem('token')
 
     const [product, setProduct] = useState()
     const [selectedFile, setSelectedFile] = useState(null)
@@ -40,7 +41,11 @@ const Editproduct = () => {
         formData.append('Price', data.Price)
         formData.append('Description', data.Description)
         formData.append('Image', selectedFile)
-        axios.put('https://localhost:7164/api/AdminProducts/CC', formData)
+        axios.put('https://localhost:7164/api/AdminProducts/CC', formData, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
             .then(res => {
                 navigate(`/product/${id}`)
             }).catch(error => {
@@ -64,7 +69,11 @@ const Editproduct = () => {
     }, [])
     console.log(data)
     const handleDelete = async () => {
-        axios.delete('https://localhost:7164/api/AdminProducts/' + id)
+        axios.delete('https://localhost:7164/api/AdminProducts/' + id, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
             .then(res => {
                 navigate('/')
             }).catch(error => {

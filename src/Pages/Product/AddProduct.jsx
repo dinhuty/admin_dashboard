@@ -36,7 +36,7 @@ const AddProduct = () => {
                 if (res.data == 'Image or category maybe null!!') {
                     setError('Image or category maybe null!!')
                 } else {
-                    navigate(`/product/add/size/${res.data}`)
+                    navigate(`/product/${res.data}`)
                 }
 
             }).catch(error => {

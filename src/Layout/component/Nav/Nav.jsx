@@ -9,14 +9,16 @@ const Nav = () => {
   const token = localStorage.getItem('token')
   const navigate = useNavigate()
   useEffect(() => {
-    if(!token) navigate('/signin')
-  },[token])
+    if (!token) navigate('/signin')
+  }, [token])
   const style = {
     position: 'sticky',
     top: 0,
     zIndex: 1,
     width: '100%',
-    height: 80
+    height: 80,
+    background: 'rgb(26, 26, 26)',
+
   }
   const handleLogout = () => {
     localStorage.removeItem('token')

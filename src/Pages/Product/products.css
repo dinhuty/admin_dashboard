@@ -2,6 +2,7 @@
     width: 100%;
     margin-top: 50px;
     margin-bottom: 70px;
+    padding: 2rem;
 }
 
 /* Add product */
@@ -233,4 +234,20 @@ th {
         font-weight: bold;
     }
 
+}
+
+.add_size>input{
+    width: 50px;
+}
+.add_size>button{
+    color: white;
+    font-weight: 600;
+    margin-top: 1rem;
+    background-color: #3498db;
+    padding: 0.5rem 0.75rem;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+.add_size>button:hover{
+    opacity: 0.8;
 }

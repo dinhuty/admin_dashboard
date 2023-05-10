@@ -6,9 +6,11 @@ import './bill.css'
 
 const BillDetail = () => {
 
+    const token = localStorage.getItem('token')
     const { id } = useParams()
     const [bill, setBill] = useState()
     const [status, setStatus] = useState()
+    const [payStatus, setPayStatus] = useState()
     const [load, setLoad] = useState()
     const navigate = useNavigate()
     const arr = [
@@ -25,6 +27,7 @@ const BillDetail = () => {
             .then(res => {
                 setBill(res.data)
                 setStatus(res.data.orderStatus)
+                setPayStatus(res.data.payStatus)
             })
             .catch(error => console.log('error get detail bill'))
     }, [load])
@@ -33,7 +36,12 @@ const BillDetail = () => {
         axios.patch('https://localhost:7164/SetBill/Status', [{
             id: id,
             status: stt
-        }]
+        }],
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }
         )
             .then(res => {
                 setLoad(!load)
@@ -67,8 +75,22 @@ const BillDetail = () => {
 
                         </div>
                         <p className="bill-detail-title">
-                            Trạng thái đơn hàng:
+                            Trạng thái:
                         </p>
+                        <div className="detail-status">
+                            {
+                                payStatus === 'Thanh toán thành công' &&
+                                <p><span>Trạng thái thanh toán: </span><p className='detail-status-name success-order'>Đã thanh toán</p></p>
+
+                            }
+                            {
+                                payStatus === 'Chưa thanh toán' &&
+                                <p><span>Trạng thái thanh toán: </span><p className='detail-status-name cancle-status'>Thanh toán khi nhận hàng</p></p>
+
+                            }
+
+                            <p><span>Thời gian đặt: </span>{bill.orderDate}</p>
+                        </div>
                         <div className="detail-status">
                             {
                                 status === 'Đã hủy đơn' &&
@@ -80,7 +102,7 @@ const BillDetail = () => {
                                 <p><span>Trạng thái đơn hàng: </span><p className='detail-status-name shipping-status'>{bill.orderStatus}</p></p>
                             }
                             {
-                                status === 'Đã đặt hàng' &&
+                                (status === 'Đã đặt hàng' || status === 'Chờ thanh toán') &&
                                 <p><span>Trạng thái đơn hàng: </span><p className='detail-status-name'>{bill.orderStatus}</p></p>
                             }
                             {
@@ -119,7 +141,7 @@ const BillDetail = () => {
 
                         </div>
                         {
-                            (status === 'Đã đặt hàng') &&
+                            (status === 'Đã đặt hàng' || status === 'Chờ thanh toán') &&
                             <p className="hanldeStatus">
                                 <button className='cancel-order csp' onClick={() => hanldeSetStatus(0)}>Vận chuyển đơn</button>
                                 <button className='cancel-order csp' onClick={() => hanldeSetStatus(1)}>Hủy đơn này</button>

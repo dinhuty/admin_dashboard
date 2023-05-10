@@ -15,6 +15,8 @@ const Sidebar = () => {
     left: 0,
     top: 0,
     bottom: 0,
+    fontsize: 99,
+    background: 'rgb(26, 26, 26)',
   }
 
   const navItem = [
@@ -43,7 +45,7 @@ const Sidebar = () => {
   const { pathname } = useLocation()
   const activeNav = navItem.findIndex(e => e.path === pathname)
   return (
-    <Sider style={style}  width={250}>
+    <Sider style={style} width={250} className='sider'>
       <div className="sidebar-top">
         <p>Dashboard</p>
       </div>

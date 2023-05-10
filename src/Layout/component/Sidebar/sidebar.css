@@ -36,7 +36,9 @@
 .sidebar-menu-item>p {
     line-height: 100%;
 }
-
+.cc{
+    background-color: rgb(26, 26, 26);
+}
 .active_nav {
     background-color: rgb(35, 106, 238);
     opacity: 1;

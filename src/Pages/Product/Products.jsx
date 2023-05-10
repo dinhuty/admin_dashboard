@@ -29,11 +29,11 @@ const Products = () => {
   }
   console.log(data)
   return (
-    <div className='product container height-cpn box'>
+    <div className='product height-cpn box'>
       <div className='user-add'>
         <div className='csp' onClick={hanldeViewAdd}>Add Product</div>
       </div>
-      <table className='user-table'>
+      <table className='user-table table'>
         <tr>
           <th>id</th>
           <th>Name</th>

@@ -8,9 +8,9 @@ const Order = () => {
   const token = localStorage.getItem('token')
   const [data, setData] = useState()
   const navigate = useNavigate()
-
+  
   useEffect(() => {
-    if(!token) navigate('/signin')
+    if (!token) navigate('/signin')
     axios.get('https://localhost:7164/GetAllBill', {
       headers: {
         'Authorization': `Bearer ${token}`
@@ -23,14 +23,14 @@ const Order = () => {
       .catch(error => {
         console.log('error gete bill')
       })
-  },[])
+  }, [])
+  console.log(data)
   const handleView = (id) => {
     navigate(`/order/${id}`)
   }
   return (
-    <div className='order container height-cpn box'>
-      <h1>----Order---</h1>
-      <table className='user-table'>
+    <div className='order  height-cpn box'>
+      <table className='user-table order_table table'>
         <tr>
           <th>id</th>
           <th>Name</th>
@@ -43,7 +43,19 @@ const Order = () => {
             <td>{item.id}</td>
             <td>{item.name}</td>
             <td>{item.phone}</td>
-            <td>{item.status}</td>
+            {
+              item.status == 'Đã đặt hàng' && <td className="status1">{item.status}</td>
+            }
+            {
+              item.status == 'Đang giao hàng' && <td className="status2">{item.status}</td>
+            }
+            {
+              item.status == 'Đã giao hàng' && <td className="status3">{item.status}</td>
+            }
+            {
+              item.status == 'Đã hủy đơn' && <td className="status4">{item.status}</td>
+            }
+
             <td className='csp edit-btn' onClick={() => handleView(item.id)}>Chi tiết</td>
           </tr>
         ))}

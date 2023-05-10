@@ -24,11 +24,11 @@ const User = () => {
   console.log(data)
 
   return (
-    <div className='user container height-cpn box'>
+    <div className='user height-cpn box'>
       <div className='user-add'>
         <div className='csp'>Add User</div>
       </div>
-      <table className='bill-detail-table'>
+      <table className='bill-detail-table table'>
         <tr>
           <th>ID</th>
           <th>Name</th>
@@ -40,12 +40,12 @@ const User = () => {
         </tr>
         {data && data?.map((item, index) => (
           <tr key={index}>
-            <td>{item.id}</td>
+            <td className='id'>{item.id}</td>
             <td>{item.name}</td>
             <td>{item.email}</td>
             <td>{item.adress}</td>
             <td>{item.phoneNumber}</td>
-            <td>Active</td>
+            <td className='user_status'>Active</td>
             <td className='csp edit-btn'>edit</td>
           </tr>
         ))}
